@@ -1,3 +1,61 @@
-<div>Currentcy
-    
+<div class="currency-page">
+
+    <header class="page-header">
+        <h1>💱 Currency Management</h1>
+        <button class="add-currency-btn" id="addCurrencyBtn">
+            ➕ Add New Currency
+        </button>
+    </header>
+
+    <!-- ADD FORM -->
+    <section class="form-section" id="addCurrencyForm" style="display: none;">
+        <h3>➕ Add New Currency</h3>
+
+        <div class="form-group">
+            <label>Flag (SVG only)</label>
+            <input type="file" id="flagInput" accept=".svg,image/svg+xml">
+        </div>
+
+        <div class="form-group">
+            <label>Country Name</label>
+            <input type="text" id="countryInput" placeholder="e.g. Bangladesh">
+        </div>
+
+        <div class="form-group">
+            <label>Currency Name</label>
+            <input type="text" id="currencyInput" placeholder="e.g. BDT">
+        </div>
+
+        <div class="form-group">
+            <label>Rate (USD)</label>
+            <input type="number" id="rateInput" placeholder="e.g. 110.50">
+        </div>
+
+        <div class="form-actions">
+            <button id="submitCurrency">✅ Submit</button>
+            <button type="button" id="cancelCurrency">❌ Cancel</button>
+        </div>
+    </section>
+
+    <!-- TABLE -->
+    <section class="table-section">
+        <table class="currency-table">
+            <thead>
+                <tr>
+                    <th>Flag</th>
+                    <th>Country</th>
+                    <th>Currency</th>
+                    <th>Rate (USD)</th>
+                    <th colspan="2">Actions</th>
+                </tr>
+            </thead>
+
+            <tbody id="currencyTableBody">
+                <!-- Dynamic rows -->
+            </tbody>
+        </table>
+    </section>
+
+
+
 </div>

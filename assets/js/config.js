@@ -1,10 +1,14 @@
-const BASE_URL = "https://trustmoneyapi.wellcometoserbia.com/api"
-
+//const BASE_URL = "https://trustmoneyapi.wellcometoserbia.com/api"
+const BASE_URL = "http://localhost:5000/api"
 
 
 const routes = {
   auth: {
-    layout: "layouts/auth/authLayout.html",
+    layout: {
+      html: "layouts/auth/authLayout.html",
+      css: "css/auth/authLayout.css",
+      js: "js/auth/authLayout.js"
+    },
     default: "login",
     meta: {
       title: "Admin Aauthentication",
@@ -12,18 +16,28 @@ const routes = {
     },
     fragments: {
       login: {
-        path: "layouts/auth/fragments/login.html",
+        html: "layouts/auth/fragments/login.html",
         title: "Admin Login",
-        icon: "Icon"
+        icon: "Icon",
+        css: "css/auth/fragments/login.css",
+        js: "js/auth/fragments/login.js"
+
       },
       register: {
-        path: "layouts/auth/fragments/register.html",
-        title: "Admin registration"
+        html: "layouts/auth/fragments/register.html",
+        title: "Admin registration",
+        css: "css/auth/fragments/register.css",
+        js: "js/auth/fragments/register.js"
+
       }
     }
   },
   admin: {
-    layout: "layouts/adminPanel/adminPanelLayout.html",
+    layout: {
+      html: "layouts/adminPanel/adminPanelLayout.html",
+      css: "css/adminPanel/adminPanelLayout.css",
+      js: "js/adminPanel/adminPanelLayout.js"
+    },
     default: "dashboard",
     meta: {
       title: "Admin Panel",
@@ -31,37 +45,51 @@ const routes = {
     },
     fragments: {
       dashboard: {
-        path: "layouts/adminPanel/fragments/dashboard.html",
+        html: "layouts/adminPanel/fragments/dashboard.html",
+        css: "css/adminPanel/fragemnts/dashboard.css",
+        js: "js/adminPanel/fragments/dashboard.js",
         title: "Dashboard",
         icon: "📊",
       },
       currency: {
-        path: "layouts/adminPanel/fragments/currency.html",
+        html: "layouts/adminPanel/fragments/currency.html",
+        css: "assets/css/adminPanel/fragments/currency.css",
+        js: "assets/js/adminPanel/fragments/currency.js",
         title: "Currency Management",
         icon: "🪙"
       },
       package: {
-        path: "layouts/adminPanel/fragments/package.html",
+        html: "layouts/adminPanel/fragments/package.html",
+        css: "assets/css/adminPanel/fragments/package.css",
+        js: "assets/js/adminPanel/fragments/package.js",
         title: "Package Management",
         icon: "📦"
       },
       users: {
-        path: "layouts/adminPanel/fragments/users.html",
+        html: "layouts/adminPanel/fragments/users.html",
+        css: "assets/css/adminPanel/fragments/users.css",
+        js: "assets/js/adminPanel/fragments/users.js",
         title: "Users Management",
         icon: "👥"
       },
       transaction: {
-        path: "layouts/adminPanel/fragments/transaction.html",
+        html: "layouts/adminPanel/fragments/transaction.html",
+        css: "assets/css/adminPanel/fragments/transaction.css",
+        js: "assets/js/adminPanel/fragments/transaction.js",
         title: "Transaction Management",
         icon: "💸",
       },
       paymentmethod: {
-        path: "layouts/adminPanel/fragments/paymentmethod.html",
+        html: "layouts/adminPanel/fragments/paymentmethod.html",
+        css: "assets/css/adminPanel/fragments/paymentmethod.css",
+        js: "assets/js/adminPanel/fragments/paymentmethod.js",
         title: "Payment Method Management",
         icon: "🏦"
       },
       document: {
-        path: "layouts/adminPanel/fragments/document.html",
+        html: "layouts/adminPanel/fragments/document.html",
+        css: "assets/css/adminPanel/fragments/document.css",
+        js: "assets/js/adminPanel/fragments/document.js",
         title: "Document Management",
         icon: "📄",
 
@@ -69,8 +97,16 @@ const routes = {
 
     },
     components: {
-      topbar: "layouts/adminPanel/components/topbar.html",
-      footer: "layouts/adminPanel/components/footer.html"
+      topbar: {
+        html: "layouts/adminPanel/components/topbar.html",
+        css: "assets/css/adminPanel/components/topbar.css",
+        js: "assets/js/adminPanel/components/topbar.js"
+      },
+      footer: {
+        html: "layouts/adminPanel/components/footer.html",
+        css: "assets/css/adminPanel/components/footer.css",
+        js: "assets/js/adminPanel/components/footer.js"
+      }
     }
   }
 };

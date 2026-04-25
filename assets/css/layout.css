@@ -1,0 +1,49 @@
+/* ROOT ADMIN GRID */
+.admin {
+    display: grid;
+    grid-template-rows: 60px 1fr 40px;
+    /* topbar, body, footer */
+    height: 100vh;
+}
+
+/* BODY (sidebar + content) */
+.admin-body {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    /* sidebar width + content */
+    overflow: hidden;
+}
+
+/* TOPBAR */
+.topbar {
+    background: #1f2937;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+
+/* SIDEBAR */
+.sidebar {
+    background: #111827;
+    color: white;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+/* CONTENT */
+.content {
+    background: #f3f4f6;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* FOOTER */
+.footer {
+    background: #1f2937;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}

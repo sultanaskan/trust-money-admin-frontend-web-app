@@ -1,0 +1,48 @@
+.sidebar button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    background: transparent;
+    color: white;
+    text-align: left;
+    border-radius: 6px;
+}
+
+.sidebar button:hover {
+    background: #1f2937;
+}
+
+.sidebar button.active {
+    background: #4f46e5;
+}
+
+.menu-btn {
+    width: 30px;
+    cursor: pointer;
+    display: none;
+    /* desktop এ hide */
+}
+
+.menu-btn span {
+    display: block;
+    height: 3px;
+    background: white;
+    margin: 5px 0;
+    border-radius: 2px;
+}
+
+
+@media (max-width: 768px) {
+    .admin-body {
+        grid-template-columns: 1fr;
+        /* sidebar hide */
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+}

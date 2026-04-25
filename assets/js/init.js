@@ -1,8 +1,7 @@
 const initMap = {
     login: initLogin,
     register: initRegister,
-    dashboard: initDashboard,
-    currency: initCurrency
+    dashboard: initDashboard
 };
 
 function runInit(routeName) {
@@ -42,9 +41,7 @@ function initDashboard() {
     console.log("Dashboard loaded");
 }
 
-function initCurrency() {
-    console.log("Currency loaded");
-}
+
 
 
 
@@ -109,5 +106,26 @@ function initLogin() {
             errorBox.innerText = res.message;
 
         }
+    });
+}
+
+function logout() {
+    localStorage.removeItem("token");
+    location.hash = "login";
+    render()
+}
+function initSidebarToggle() {
+    const menuBtn = document.getElementById("menuBtn");
+    const sidebar = document.getElementById("sidebar");
+    if (!menuBtn) return;
+
+    // open sidebar
+    menuBtn.addEventListener("click", () => {
+        if (window.getComputedStyle(sidebar).display === "none") {
+            sidebar.style.display = "block";
+        } else {
+            sidebar.style.display = "none";
+        }
+
     });
 }

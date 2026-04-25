@@ -1,5 +1,5 @@
 // HTML loader
-async function loadHTML(path) {
+async function loadCode(path) {
     const res = await fetch(path);
     return await res.text();
 }
@@ -11,24 +11,38 @@ async function render() {
     const mode = token ? "admin" : "auth";
     const route = routes[mode];
     // layout load
-    app.innerHTML = await loadHTML(route.layout);
+    app.innerHTML = await loadCode(route.layout.html);
     // admin হলে sidebar + topbar load
     if (mode === "admin") {
         await loadAdminComponents(route);
         renderSidebar();
+        initSidebarToggle();
     }
-
     let fragment = location.hash.replace("#", "") || route.default;
-    loadFragment(mode, fragment);
+    await loadFragment(mode, fragment);
+
+    runInit(fragment);
 }
 
 
 
-// admin components
+// admin components loader
 async function loadAdminComponents(route) {
-    Object.entries(route.components).forEach(async ([key, value]) => {
-        document.getElementById(key).innerHTML = await loadHTML(value);
-    })
+    // for...of লুপ await-কে সম্মান করে
+    for (const [key, value] of Object.entries(route.components)) {
+        const element = document.getElementById(key);
+        if (element) {
+            element.innerHTML = await loadCode(value.html);
+            const link = document.createElement("link");
+            link.rel = "stylesheet";
+            link.href = value.css;
+            document.head.appendChild(link)
+
+            const script = document.createElement("script");
+            script.src = value.js;
+            document.body.appendChild(script)
+        }
+    }
 }
 function renderSidebar() {
     const sidebar = document.getElementById("sidebar");
@@ -40,20 +54,31 @@ function renderSidebar() {
         btn.onclick = () => {
             location.hash = key;
         };
-        console.log(btn)
         sidebar.appendChild(btn);
     });
 }
 // page loader
 async function loadFragment(mode, fragment) {
-    const route = routes[mode];
+    const frag = routes[mode]?.fragments[fragment];
     const content = document.getElementById("content");
-    if (!route.fragments[fragment]) {
+    if (!frag) {
         content.innerHTML = "<h2>Not Found</h2>";
         return;
     }
-    content.innerHTML = await loadHTML(route.fragments[fragment].path);
-    runInit(fragment);
+    content.innerHTML = await loadCode(frag.html);
+
+    // CSS
+    const link = document.createElement("link");
+    link.href = frag.css;
+    link.rel = "stylesheet";
+    document.head.appendChild(link);
+
+    // JS
+    const script = document.createElement("script");
+    script.src = frag.js;
+    script.defer = true;
+    document.body.appendChild(script);
+
 }
 
 // start

@@ -1,3 +1,59 @@
-<div>
-    package
+<div class="package-page">
+
+    <header class="page-header">
+        <h1>📦 Package Management</h1>
+        <button class="add-package-btn" id="addPackageBtn">
+            ➕ Add New Package
+        </button>
+    </header>
+
+    <!-- ADD / UPDATE FORM -->
+    <section class="form-section" id="packageForm" style="display: none;">
+        <h3 id="formTitle">➕ Add New Package</h3>
+
+        <input type="hidden" id="packageId">
+
+        <div class="form-group">
+            <label>Package Name</label>
+            <input type="text" id="packageName">
+        </div>
+
+        <div class="form-group">
+            <label>Price</label>
+            <input type="number" id="price">
+        </div>
+
+        <div class="form-group">
+            <label>Validity (Days)</label>
+            <input type="number" id="validityDays">
+        </div>
+
+        <div class="form-group">
+            <label>Features</label>
+            <input type="text" id="features">
+        </div>
+
+        <div class="form-actions">
+            <button id="submitPackage">✅ Submit</button>
+            <button type="button" id="cancelPackage">❌ Cancel</button>
+        </div>
+    </section>
+
+    <!-- TABLE -->
+    <section class="table-section">
+        <table class="package-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Validity</th>
+                    <th>Features</th>
+                    <th colspan="2">Actions</th>
+                </tr>
+            </thead>
+
+            <tbody id="packageTableBody"></tbody>
+        </table>
+    </section>
+
 </div>
