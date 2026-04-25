@@ -56,42 +56,42 @@ const routes = {
         css: "assets/css/adminPanel/fragments/currency.css",
         js: "assets/js/adminPanel/fragments/currency.js",
         title: "Currency Management",
-        icon: "🪙"
+        icon: `<i class="fa-solid fa-coins"></i>`
       },
       package: {
         html: "layouts/adminPanel/fragments/package.html",
         css: "assets/css/adminPanel/fragments/package.css",
         js: "assets/js/adminPanel/fragments/package.js",
         title: "Package Management",
-        icon: "📦"
+        icon: `<i class="fa-solid fa-box"></i>`
       },
       users: {
         html: "layouts/adminPanel/fragments/users.html",
         css: "assets/css/adminPanel/fragments/users.css",
         js: "assets/js/adminPanel/fragments/users.js",
         title: "Users Management",
-        icon: "👥"
+        icon: '<i class="fa-solid fa-users"></i>'
       },
       transaction: {
         html: "layouts/adminPanel/fragments/transaction.html",
         css: "assets/css/adminPanel/fragments/transaction.css",
         js: "assets/js/adminPanel/fragments/transaction.js",
         title: "Transaction Management",
-        icon: "💸",
+        icon: '<i class="fa-solid fa-money-bill-transfer"></i>'
       },
       paymentmethod: {
         html: "layouts/adminPanel/fragments/paymentmethod.html",
         css: "assets/css/adminPanel/fragments/paymentmethod.css",
         js: "assets/js/adminPanel/fragments/paymentmethod.js",
         title: "Payment Method Management",
-        icon: "🏦"
+        icon: `<i class="fa-solid fa-building-columns"></i>`
       },
       document: {
         html: "layouts/adminPanel/fragments/document.html",
         css: "assets/css/adminPanel/fragments/document.css",
         js: "assets/js/adminPanel/fragments/document.js",
         title: "Document Management",
-        icon: "📄",
+        icon: `<i class="fa-solid fa-file-lines"></i>`
 
       }
 

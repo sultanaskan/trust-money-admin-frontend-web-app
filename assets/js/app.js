@@ -44,6 +44,7 @@ async function loadAdminComponents(route) {
         }
     }
 }
+
 function renderSidebar() {
     const sidebar = document.getElementById("sidebar");
     const fragments = routes.admin.fragments;
@@ -57,6 +58,7 @@ function renderSidebar() {
         sidebar.appendChild(btn);
     });
 }
+
 // page loader
 async function loadFragment(mode, fragment) {
     const frag = routes[mode]?.fragments[fragment];
