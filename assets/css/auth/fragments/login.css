@@ -1,0 +1,99 @@
+/* ===== FORM WRAPPER ===== */
+.login-form {
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.4s ease;
+}
+
+/* ===== TITLE ===== */
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* ===== GROUP ===== */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* ===== LABEL ===== */
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 13px;
+    color: #555;
+    font-weight: 500;
+}
+
+/* ===== INPUT ===== */
+.form-group input {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #f9fafb;
+    font-size: 14px;
+    transition: 0.25s ease;
+}
+
+/* focus effect */
+.form-group input:focus {
+    border-color: #4f46e5;
+    background: #fff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+/* ===== BUTTON ===== */
+.form-actions button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* hover */
+.form-actions button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+}
+
+/* click */
+.form-actions button:active {
+    transform: scale(0.97);
+}
+
+/* ===== ERROR TEXT ===== */
+.error-text {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #ef4444;
+    text-align: center;
+    min-height: 18px;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

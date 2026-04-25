@@ -1,20 +1,56 @@
-<div>
-  <input type="text" id="countryName" placeholder="Country Name" value="Bangladesh" />
+<div class="register-form">
 
-  <input type="text" id="firstName" placeholder="First Name" />
-  <input type="text" id="lastName" placeholder="Last Name" />
+  <h2>📝 Create Account</h2>
 
-  <input type="tel" id="phone" placeholder="Phone Number" />
+  <!-- COUNTRY -->
+  <div class="form-group">
+    <label>Country</label>
+    <input type="text" id="countryName" value="Bangladesh" readonly />
+  </div>
 
-  <input type="email" id="email" placeholder="Email" />
+  <!-- NAME ROW -->
+  <div class="form-row">
+    <div class="form-group">
+      <label>First Name</label>
+      <input type="text" id="firstName" placeholder="Enter first name" />
+    </div>
 
-  <!-- hidden fields (default values) -->
+    <div class="form-group">
+      <label>Last Name</label>
+      <input type="text" id="lastName" placeholder="Enter last name" />
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="form-group">
+    <label>Phone Number</label>
+    <input type="tel" id="phone" placeholder="e.g. 017XXXXXXXX" />
+  </div>
+
+  <div class="form-group">
+    <label>Email Address</label>
+    <input type="email" id="email" placeholder="example@email.com" />
+  </div>
+
+  <!-- PASSWORD -->
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" id="password" placeholder="Enter secure password" />
+  </div>
+
+  <!-- DOB -->
+  <div class="form-group">
+    <label>Date of Birth</label>
+    <input type="date" id="dateOfBirth" />
+  </div>
+
+  <!-- HIDDEN -->
   <input type="hidden" id="role" value="admin" />
   <input type="hidden" id="status" value="personal" />
 
-  <input type="password" id="password" placeholder="Password" />
+  <!-- ACTION -->
+  <div class="form-actions">
+    <button id="registerBtn">🚀 Create Account</button>
+  </div>
 
-  <input type="date" id="dateOfBirth" />
-
-  <button id="registerBtn">Register</button>
 </div>

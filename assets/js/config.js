@@ -1,33 +1,33 @@
-const BASE_URL = "https://trustmoneyapi.wellcometoserbia.com/api"
-//const BASE_URL = "http://localhost:5000/api"
+//const BASE_URL = "https://trustmoneyapi.wellcometoserbia.com/api"
+const BASE_URL = "http://localhost:5000/api"
 
 
 const routes = {
   auth: {
     layout: {
       html: "layouts/auth/authLayout.html",
-      css: "css/auth/authLayout.css",
-      js: "js/auth/authLayout.js"
+      css: "assets/css/auth/authLayout.css",
+      js: "assets/js/auth/authLayout.js"
     },
     default: "login",
     meta: {
       title: "Admin Aauthentication",
-      logo: "/asets/images/logo.png"
+      logo: "/assets/images/logo.png"
     },
     fragments: {
       login: {
         html: "layouts/auth/fragments/login.html",
         title: "Admin Login",
         icon: "Icon",
-        css: "css/auth/fragments/login.css",
-        js: "js/auth/fragments/login.js"
+        css: "assets/css/auth/fragments/login.css",
+        js: "assets/js/auth/fragments/login.js"
 
       },
       register: {
         html: "layouts/auth/fragments/register.html",
         title: "Admin registration",
-        css: "css/auth/fragments/register.css",
-        js: "js/auth/fragments/register.js"
+        css: "assets/css/auth/fragments/register.css",
+        js: "assets/js/auth/fragments/register.js"
 
       }
     }
@@ -35,8 +35,8 @@ const routes = {
   admin: {
     layout: {
       html: "layouts/adminPanel/adminPanelLayout.html",
-      css: "css/adminPanel/adminPanelLayout.css",
-      js: "js/adminPanel/adminPanelLayout.js"
+      css: "assets/css/adminPanel/adminPanelLayout.css",
+      js: "assets/js/adminPanel/adminPanelLayout.js"
     },
     default: "dashboard",
     meta: {
@@ -46,8 +46,8 @@ const routes = {
     fragments: {
       dashboard: {
         html: "layouts/adminPanel/fragments/dashboard.html",
-        css: "css/adminPanel/fragemnts/dashboard.css",
-        js: "js/adminPanel/fragments/dashboard.js",
+        css: "assets/css/adminPanel/fragemnts/dashboard.css",
+        js: "assets/js/adminPanel/fragments/dashboard.js",
         title: "Dashboard",
         icon: "📊",
       },

@@ -1,16 +1,25 @@
 <div class="auth-container">
-  <div class="auth-box">
 
-    <!-- 🔥 Tab Bar -->
-    <div class="tabs">
-      <button onclick="location.hash = 'login' ">Login</button>
-      <button onclick="location.hash='register'">Register</button>
-    </div>
+  <!-- AUTH CARD -->
+  <div class="auth-card">
 
-    <!-- 🔥 Fragment Load Area -->
-    <div id="content">
-      <h1>No fragement selected</h1>
-    </div>
+    <!-- HEADER -->
+    <header class="auth-header">
+      <h1 class="auth-title">Trust Money</h1>
+      <p class="auth-subtitle">Secure access to your account</p>
+    </header>
+
+    <!-- TAB NAVIGATION -->
+    <nav class="auth-tabs">
+      <button class="tab-btn" onclick="location.hash = 'login'">Login</button>
+      <button class="tab-btn" onclick="location.hash = 'register'">Register</button>
+    </nav>
+
+    <!-- CONTENT AREA (DYNAMIC FRAGMENT LOAD) -->
+    <main id="content" class="auth-content">
+      <h1 class="placeholder-text">No fragment selected</h1>
+    </main>
 
   </div>
+
 </div>

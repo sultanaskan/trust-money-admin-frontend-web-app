@@ -1,0 +1,115 @@
+/* ===== WRAPPER ===== */
+.register-form {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.4s ease;
+}
+
+/* ===== TITLE ===== */
+.register-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* ===== FORM GROUP ===== */
+.form-group {
+    margin-bottom: 14px;
+}
+
+/* ===== LABEL ===== */
+.form-group label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: 500;
+}
+
+/* ===== INPUT ===== */
+.form-group input {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #f9fafb;
+    font-size: 14px;
+    transition: 0.25s ease;
+}
+
+/* focus */
+.form-group input:focus {
+    border-color: #4f46e5;
+    background: #fff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+/* readonly input */
+.form-group input[readonly] {
+    background: #eef2ff;
+    color: #555;
+    cursor: not-allowed;
+}
+
+/* ===== ROW (2 COLUMN) ===== */
+.form-row {
+    display: flex;
+    gap: 10px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+/* ===== BUTTON ===== */
+.form-actions button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 10px;
+}
+
+/* hover */
+.form-actions button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
+}
+
+/* active */
+.form-actions button:active {
+    transform: scale(0.97);
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+    .form-row {
+        flex-direction: column;
+    }
+}
