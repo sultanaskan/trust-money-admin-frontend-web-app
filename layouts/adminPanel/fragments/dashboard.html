@@ -1,23 +1,67 @@
-<div id="dashboard" class="dashboard">
+<div class="currency-page">
 
-    <h1>Admin Dashboard</h1>
+    <!-- HEADER -->
+    <header class="page-header">
+        <h1>📊 Dashboard Overview</h1>
+    </header>
 
-    <!-- Top Stats -->
-    <div class="stats-grid" id="statsContainer"></div>
+    <!-- SUMMARY CARDS -->
+    <section class="table-section" id="dashboardCards">
 
-    <!-- Summary Section -->
-    <div class="grid-2">
+        <div class="dashboard-grid">
 
-        <div class="card">
-            <h3>Order Summary</h3>
-            <div id="orderSummary"></div>
+            <div class="card">
+                <h3>Total Users</h3>
+                <p id="totalUsers">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Total Transactions</h3>
+                <p id="totalTransactions">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Pending Transactions</h3>
+                <p id="pendingTransactions">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Total Deposit</h3>
+                <p id="totalDeposit">$0</p>
+            </div>
+
+            <div class="card">
+                <h3>Total Withdraw</h3>
+                <p id="totalWithdraw">$0</p>
+            </div>
+
+            <div class="card">
+                <h3>Active Payment Methods</h3>
+                <p id="activePayments">0</p>
+            </div>
+
         </div>
 
-        <div class="card">
-            <h3>Add Money Summary</h3>
-            <div id="moneySummary"></div>
-        </div>
+    </section>
 
-    </div>
+    <!-- RECENT TRANSACTIONS -->
+    <section class="table-section">
+        <h3>🕒 Recent Transactions</h3>
+
+        <table class="currency-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>User</th>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+
+            <tbody id="recentTxnTable"></tbody>
+        </table>
+    </section>
 
 </div>

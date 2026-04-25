@@ -1,3 +1,68 @@
-<div>
-    Payment Methods
+<div class="payment-page">
+
+    <!-- HEADER -->
+    <header class="page-header">
+        <h1>💳 Payment Methods</h1>
+        <button class="add-btn" id="addPaymentBtn">
+            ➕ Add Payment Method
+        </button>
+    </header>
+
+    <!-- FORM -->
+    <section class="form-section" id="paymentForm" style="display:none;">
+        <h3>➕ Create Payment Method</h3>
+
+        <div class="form-group">
+            <label>Method Type</label>
+            <input type="text" id="methodType" placeholder="mobile / bank / card">
+        </div>
+
+        <div class="form-group">
+            <label>Method Name</label>
+            <input type="text" id="methodName" placeholder="e.g. bKash">
+        </div>
+
+        <div class="form-group">
+            <label>Account Number</label>
+            <input type="text" id="accountNumber" placeholder="017XXXXXXXX">
+        </div>
+
+        <div class="form-group">
+            <label>Account Type</label>
+            <input type="text" id="accountType" placeholder="Personal / Merchant">
+        </div>
+
+        <div class="form-group">
+            <label>Payment Guide</label>
+            <textarea id="paymentGuide" placeholder="Instructions..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Status</label>
+            <input type="text" id="status" placeholder="active / inactive">
+        </div>
+
+        <div class="form-actions">
+            <button id="submitPayment">✅ Submit</button>
+            <button type="button" id="cancelPayment">❌ Cancel</button>
+        </div>
+    </section>
+
+    <!-- TABLE -->
+    <section class="table-section">
+        <table class="payment-table">
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>Type</th>
+                    <th>Account</th>
+                    <th>Status</th>
+                    <th colspan="2">Actions</th>
+                </tr>
+            </thead>
+
+            <tbody id="paymentTableBody"></tbody>
+        </table>
+    </section>
+
 </div>
