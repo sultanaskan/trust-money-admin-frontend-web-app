@@ -1,5 +1,10 @@
-const BASE_URL = "https://trustmoneyapi.wellcometoserbia.com/api"
-//const BASE_URL = "http://localhost:5000/api"
+const isLocal =
+  ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+const BASE_URL = isLocal
+  ? "http://localhost:5000/api"
+  : "https://trustmoneyapi.wellcometoserbia.com/api";
+
 
 
 const routes = {

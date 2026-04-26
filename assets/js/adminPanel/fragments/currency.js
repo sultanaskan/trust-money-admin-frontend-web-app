@@ -1,8 +1,8 @@
 // ================= CONFIG =================
 const API = {
-    getAll: `${BASE_URL}/currency/get-currency-rates`,
-    create: `${BASE_URL}/currency/set-currency-rate`,
-    delete: (id) => `${BASE_URL}/currency/delete-currency-rate/${id}`
+    getAll: `${BASE_URL}/currency`,
+    create: `${BASE_URL}/currency`,
+    delete: (id) => `${BASE_URL}/currency/${id}`
 };
 
 // ================= DOM CACHE =================
@@ -42,7 +42,7 @@ function renderTable(data) {
         const row = document.createElement("tr");
 
         row.innerHTML = `
-      <td><img src="${BASE_URL.replace('/api', "") + item.flagUrl}" width="50"></td>
+      <td><img src="${item.flagUrl}" width="50"></td>
       <td>${item.countryName}</td>
       <td>${item.currencyName}</td>
       <td>$1=${Number(item.rateInUsd).toFixed(2)} ${item.currencyName}</td>
