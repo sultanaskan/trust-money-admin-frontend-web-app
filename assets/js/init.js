@@ -1,6 +1,4 @@
 const initMap = {
-    login: initLogin,
-    register: initRegister,
     dashboard: initDashboard
 };
 
@@ -13,26 +11,6 @@ function runInit(routeName) {
 // ==================
 
 
-function initRegister() {
-    document.getElementById("registerBtn").addEventListener("click", async () => {
-        const data = getRegisterData();
-        const error = validateRegister(data);
-        if (error) {
-            alert(error);
-            return;
-        }
-
-        // 🔥 API call
-        const res = await registerUser(data);
-
-        if (res.success) {
-            alert("Registration successful");
-            location.hash = "#login";
-        } else {
-            alert(res.message || "Something went wrong");
-        }
-    });
-}
 
 // ==================
 // admin
@@ -66,47 +44,6 @@ function initAuthTabs(onChange) {
         })
 
     })
-}
-
-function initLogin() {
-    const btn = document.getElementById("loginBtn");
-    const errorBox = document.getElementById("loginError");
-
-    btn.addEventListener("click", async () => {
-        errorBox.innerText = "";
-
-        const data = {
-            email: document.getElementById("loginEmail").value,
-            password: document.getElementById("loginPassword").value
-        };
-
-        // 🔍 Validate
-        const error = validateLogin(data);
-        if (error) {
-            errorBox.innerText = error;
-            return;
-        }
-
-        // 🔄 Loading state
-        btn.innerText = "Logging in...";
-        btn.disabled = true;
-
-        // 🌐 API call
-        const res = await loginUser(data);
-
-        // 🔁 Reset button
-        btn.innerText = "Login";
-        btn.disabled = false;
-        console.log(res.success);
-        if (res.token) {
-            // 🔐 token save
-            localStorage.setItem("token", res.token);
-            render()
-        } else {
-            errorBox.innerText = res.message;
-
-        }
-    });
 }
 
 function logout() {

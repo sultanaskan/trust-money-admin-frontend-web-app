@@ -1,18 +1,3 @@
-async function registerUser(data) {
-    try {
-        const res = await fetch(`${BASE_URL}/register`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        });
-
-        return await res.json();
-    } catch (err) {
-        return { success: false, message: "Network error" };
-    }
-}
 
 
 async function loginUser(data) {
