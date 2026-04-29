@@ -1,68 +1,87 @@
 <div class="payment-page">
-
-    <!-- HEADER -->
     <header class="page-header">
         <h1>💳 Payment Methods</h1>
-        <button class="add-btn" id="addPaymentBtn">
-            ➕ Add Payment Method
-        </button>
+        <button class="add-btn" id="addPaymentBtn">➕ Add Payment Method</button>
     </header>
 
-    <!-- FORM -->
-    <section class="form-section" id="paymentForm" style="display:none;">
-        <h3>➕ Create Payment Method</h3>
+    <section class="form-section" id="paymentForm"
+        style="display:none; border: 1px solid #ddd; padding: 25px; margin-bottom: 20px; border-radius: 12px; background: #fff;">
+        <h3 id="formTitle" style="margin-top: 0;">➕ Create Payment Method</h3>
 
-        <div class="form-group">
-            <label>Method Type</label>
-            <input type="text" id="methodType" placeholder="mobile / bank / card">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+            <div class="form-group">
+                <label style="display:block; font-weight:bold; margin-bottom:5px;">Method Type</label>
+                <select id="methodType" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:5px;">
+                    <option value="">Select Type</option>
+                    <option value="mobile">Mobile (Bkash/Nagad)</option>
+                    <option value="banking">Traditional Banking</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label style="display:block; font-weight:bold; margin-bottom:5px;">Provider Name</label>
+                <input type="text" id="providerName" placeholder="e.g. Bkash, DBBL, City Bank"
+                    style="width:100%; padding:10px; border:1px solid #ccc; border-radius:5px;">
+            </div>
+
+            <div class="form-group">
+                <label style="display:block; font-weight:bold; margin-bottom:5px;">Bank/Provider Logo</label>
+                <input type="file" id="bankLogo" accept="image/*" style="width:100%; padding:8px;">
+            </div>
+
+            <div class="form-group">
+                <label style="display:block; font-weight:bold; margin-bottom:5px;">Account Number</label>
+                <input type="text" id="accountNumber" placeholder="017XXXXXXXX / Account No"
+                    style="width:100%; padding:10px; border:1px solid #ccc; border-radius:5px;">
+            </div>
+
+            <div class="form-group">
+                <label style="display:block; font-weight:bold; margin-bottom:5px;">Account Type</label>
+                <select id="accountType" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:5px;">
+                    <option value="personal">Personal</option>
+                    <option value="agent">Agent</option>
+                    <option value="saving">Saving</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label style="display:block; font-weight:bold; margin-bottom:5px;">Status</label>
+                <select id="status" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:5px;">
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                </select>
+            </div>
         </div>
 
-        <div class="form-group">
-            <label>Method Name</label>
-            <input type="text" id="methodName" placeholder="e.g. bKash">
+        <div class="form-group" style="margin-top: 15px;">
+            <label style="display:block; font-weight:bold; margin-bottom:5px;">Payment Guide</label>
+            <textarea id="paymentGuide" placeholder="Instruction for the user on how to pay..."
+                style="width:100%; padding:10px; border:1px solid #ccc; border-radius:5px; height: 80px;"></textarea>
         </div>
 
-        <div class="form-group">
-            <label>Account Number</label>
-            <input type="text" id="accountNumber" placeholder="017XXXXXXXX">
-        </div>
-
-        <div class="form-group">
-            <label>Account Type</label>
-            <input type="text" id="accountType" placeholder="Personal / Merchant">
-        </div>
-
-        <div class="form-group">
-            <label>Payment Guide</label>
-            <textarea id="paymentGuide" placeholder="Instructions..."></textarea>
-        </div>
-
-        <div class="form-group">
-            <label>Status</label>
-            <input type="text" id="status" placeholder="active / inactive">
-        </div>
-
-        <div class="form-actions">
-            <button id="submitPayment">✅ Submit</button>
-            <button type="button" id="cancelPayment">❌ Cancel</button>
+        <div class="form-actions" style="margin-top: 20px; display: flex; gap: 10px;">
+            <button id="submitPayment"
+                style="background: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">✅
+                Submit</button>
+            <button type="button" id="cancelPayment"
+                style="background: #6c757d; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">❌
+                Cancel</button>
         </div>
     </section>
 
-    <!-- TABLE -->
-    <section class="table-section">
-        <table class="payment-table">
+    <section class="table-section" style="background:#fff; border-radius:8px; border:1px solid #eee; overflow: hidden;">
+        <table class="payment-table" width="100%" style="border-collapse: collapse; text-align: left;">
             <thead>
-                <tr>
-                    <th>Method</th>
+                <tr style="background: #f8f9fa; border-bottom: 2px solid #eee;">
+                    <th style="padding: 15px;">Logo</th>
+                    <th>Provider</th>
                     <th>Type</th>
-                    <th>Account</th>
+                    <th>Account Info</th>
                     <th>Status</th>
-                    <th colspan="2">Actions</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
-
             <tbody id="paymentTableBody"></tbody>
         </table>
     </section>
-
 </div>
