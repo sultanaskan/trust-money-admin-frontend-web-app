@@ -1,0 +1,46 @@
+<div class="banner-page">
+    <header class="page-header">
+        <h1>🖼️ Banner Management</h1>
+        <button class="add-btn" id="addBannerBtn">
+            ➕ Add New Banner
+        </button>
+    </header>
+
+    <!-- ADD FORM SECTION -->
+    <section class="form-section" id="addBannerForm" style="display: none;">
+        <h3>➕ Upload New Banner</h3>
+
+        <div class="form-group">
+            <label>Banner Image (JPG, PNG, WEBP - Max 1MB)</label>
+            <input type="file" id="bannerImageInput" accept="image/*">
+        </div>
+
+        <div class="form-group">
+            <label>Banner Title</label>
+            <input type="text" id="bannerTitleInput" placeholder="e.g. Summer Sale 2026">
+        </div>
+
+        <div class="form-actions">
+            <button id="submitBanner">✅ Upload Banner</button>
+            <button type="button" id="cancelBanner">❌ Cancel</button>
+        </div>
+    </section>
+
+    <!-- BANNER TABLE -->
+    <section class="table-section">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Preview</th>
+                    <th>Title</th>
+                    <th>Status</th>
+                    <th>Created At</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="bannerTableBody">
+                <!-- ডায়নামিক রো এখানে ইনসার্ট হবে -->
+            </tbody>
+        </table>
+    </section>
+</div>

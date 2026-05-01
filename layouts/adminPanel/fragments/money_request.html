@@ -1,0 +1,36 @@
+<div class="money-request-page">
+    <header class="page-header">
+        <h1>💸 Money Request Management</h1>
+        <p>Review and manage user payment submissions</p>
+    </header>
+
+    <!-- TABLE SECTION -->
+    <section class="table-section">
+        <table class="money-request-table">
+            <thead>
+                <tr>
+                    <th>User Info</th>
+                    <th>Method</th>
+                    <th>Amount</th>
+                    <th>TrxID</th>
+                    <th>Receipt</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="requestTableBody">
+                <!-- ডায়নামিক ডাটা এখানে আসবে -->
+            </tbody>
+        </table>
+    </section>
+
+    <!-- RECEIPT MODAL (ছবি বড় করে দেখার জন্য - Optional) -->
+    <div id="receiptModal"
+        style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:1000; justify-content:center; align-items:center;">
+        <div style="position:relative; background:#fff; padding:10px; border-radius:8px;">
+            <span id="closeModal"
+                style="position:absolute; top:-15px; right:-15px; background:red; color:#fff; cursor:pointer; padding:5px 10px; border-radius:50%;">X</span>
+            <img id="modalImg" src="" style="max-width:90vw; max-height:90vh; border-radius:4px;">
+        </div>
+    </div>
+</div>

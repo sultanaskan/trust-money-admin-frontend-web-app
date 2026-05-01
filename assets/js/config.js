@@ -98,6 +98,27 @@ const routes = {
         title: "Document Management",
         icon: `<i class="fa-solid fa-file-lines"></i>`
 
+      },
+      money_request: {
+        html: "layouts/adminPanel/fragments/money_request.html",
+        css: "assets/css/adminPanel/fragments/money_request.css",
+        js: "assets/js/adminPanel/fragments/money_request.js",
+        title: "Money Request Management",
+        icon: `<i class="fa-solid fa-money-bills"></i>`
+      },
+      banner: {
+        html: "layouts/adminPanel/fragments/banner.html",
+        css: "assets/css/adminPanel/fragments/banner.css",
+        js: "assets/js/adminPanel/fragments/banner.js",
+        title: "Banner Management",
+        icon: `<i class="fa-solid fa-money-bills"></i>`
+      },
+      notification: {
+        html: "layouts/adminPanel/fragments/notification.html",
+        css: "assets/css/adminPanel/fragments/notification.css",
+        js: "assets/js/adminPanel/fragments/notification.js",
+        title: "Notification Management",
+        icon: `<i class="fa-solid fa-money-bills"></i>`
       }
 
     },
