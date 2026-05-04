@@ -1,67 +1,69 @@
-<div class="currency-page">
-
-    <!-- HEADER -->
+<div class="currency-page dashboard-page">
     <header class="page-header">
-        <h1>📊 Dashboard Overview</h1>
+        <h1>📊 Admin Dashboard Overview</h1>
+        <button class="add-currency-btn" id="refreshDashboard">🔄 Refresh Data</button>
     </header>
 
-    <!-- SUMMARY CARDS -->
-    <section class="table-section" id="dashboardCards">
-
+    <!-- STATISTICS CARDS -->
+    <section class="table-section">
         <div class="dashboard-grid">
-
-            <div class="card">
-                <h3>Total Users</h3>
-                <p id="totalUsers">0</p>
+            <!-- User Stats -->
+            <div class="card stat-card user-stats">
+                <h3>👥 Total Users</h3>
+                <p class="stat-value" id="statTotalUsers">0</p>
+                <div class="stat-footer">
+                    <span>Active: <b id="statActiveUsers">0</b></span> |
+                    <span>Agents: <b id="statAgents">0</b></span>
+                </div>
             </div>
 
-            <div class="card">
-                <h3>Total Transactions</h3>
-                <p id="totalTransactions">0</p>
+            <!-- Financial Stats -->
+            <div class="card stat-card finance-stats">
+                <h3>💰 System Balance</h3>
+                <p class="stat-value" id="statSystemBalance">$0</p>
+                <div class="stat-footer">
+                    <span>Revenue: <b id="statRevenue">$0</b></span>
+                </div>
             </div>
 
-            <div class="card">
-                <h3>Pending Transactions</h3>
-                <p id="pendingTransactions">0</p>
+            <!-- Transaction Stats -->
+            <div class="card stat-card transaction-stats">
+                <h3>📥 Total Deposits</h3>
+                <p class="stat-value" id="statTotalDeposits">$0</p>
+                <p class="stat-footer">Withdrawals: <b id="statTotalWithdrawals">$0</b></p>
             </div>
 
-            <div class="card">
-                <h3>Total Deposit</h3>
-                <p id="totalDeposit">$0</p>
+            <!-- Request Stats -->
+            <div class="card stat-card request-stats">
+                <h3>⏳ Pending Requests</h3>
+                <p class="stat-value text-warning" id="statPendingCount">0</p>
+                <p class="stat-footer">Approved Vol: <b id="statApprovedVolume">$0</b></p>
             </div>
-
-            <div class="card">
-                <h3>Total Withdraw</h3>
-                <p id="totalWithdraw">$0</p>
-            </div>
-
-            <div class="card">
-                <h3>Active Payment Methods</h3>
-                <p id="activePayments">0</p>
-            </div>
-
         </div>
-
     </section>
 
-    <!-- RECENT TRANSACTIONS -->
+    <!-- RECENT ACTIVITY TABLE -->
     <section class="table-section">
-        <h3>🕒 Recent Transactions</h3>
+        <div class="section-header"
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <h3>🕒 Recent Activity</h3>
+            <a href="#" style="font-size: 14px; color: #007bff;">View All Transactions</a>
+        </div>
 
         <table class="currency-table">
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>User</th>
                     <th>Type</th>
                     <th>Amount</th>
+                    <th>TrxID / Description</th>
                     <th>Status</th>
                     <th>Date</th>
                 </tr>
             </thead>
-
-            <tbody id="recentTxnTable"></tbody>
+            <tbody id="recentActivityTable">
+                <!-- ডায়নামিক ডাটা এখানে আসবে -->
+            </tbody>
         </table>
     </section>
-
 </div>
