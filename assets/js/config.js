@@ -106,6 +106,13 @@ const routes = {
         title: "Money Request Management",
         icon: `<i class="fa-solid fa-money-bills"></i>`
       },
+      verification_fragment: {
+        html: "layouts/adminPanel/fragments/verification_fragment.html",
+        css: "assets/css/adminPanel/fragments/verification_fragment.css",
+        js: "assets/js/adminPanel/fragments/verification_fragment.js",
+        title: "Money Request Management",
+        icon: `<i class="fa-solid fa-money-bills"></i>`
+      },
       banner: {
         html: "layouts/adminPanel/fragments/banner.html",
         css: "assets/css/adminPanel/fragments/banner.css",
