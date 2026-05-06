@@ -110,22 +110,22 @@ const routes = {
         html: "layouts/adminPanel/fragments/verification_fragment.html",
         css: "assets/css/adminPanel/fragments/verification_fragment.css",
         js: "assets/js/adminPanel/fragments/verification_fragment.js",
-        title: "Money Request Management",
-        icon: `<i class="fa-solid fa-money-bills"></i>`
+        title: "User Verification Management",
+        icon: `<i class="fa-solid fa-user-check"></i>`
       },
       banner: {
         html: "layouts/adminPanel/fragments/banner.html",
         css: "assets/css/adminPanel/fragments/banner.css",
         js: "assets/js/adminPanel/fragments/banner.js",
         title: "Banner Management",
-        icon: `<i class="fa-solid fa-money-bills"></i>`
+        icon: `<i class="fa-solid fa-rectangle-ad"></i>`
       },
       notification: {
         html: "layouts/adminPanel/fragments/notification.html",
         css: "assets/css/adminPanel/fragments/notification.css",
         js: "assets/js/adminPanel/fragments/notification.js",
         title: "Notification Management",
-        icon: `<i class="fa-solid fa-money-bills"></i>`
+        icon: `<i class="fa-solid fa-bell"></i>`
       }
 
     },
