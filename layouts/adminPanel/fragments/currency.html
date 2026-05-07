@@ -1,19 +1,18 @@
 <div class="currency-page">
-
     <header class="page-header">
         <h1>💱 Currency Management</h1>
-        <button class="add-currency-btn" id="addCurrencyBtn">
-            ➕ Add New Currency
-        </button>
+        <button class="add-currency-btn" id="addCurrencyBtn">➕ Add New Currency</button>
     </header>
 
-    <!-- ADD FORM -->
-    <section class="form-section" id="addCurrencyForm" style="display: none;">
-        <h3>➕ Add New Currency</h3>
+    <section class="form-section" id="addCurrencyForm" style="display: none; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 20px;">
+        <h3 id="formTitle">➕ Add New Currency</h3>
+        
+        <input type="hidden" id="editCurrencyId">
 
         <div class="form-group">
             <label>Flag (SVG only)</label>
             <input type="file" id="flagInput" accept=".svg,image/svg+xml">
+            <small id="currentFlagText" style="display:none; color: blue;">Current flag is selected.</small>
         </div>
 
         <div class="form-group">
@@ -31,31 +30,24 @@
             <input type="number" id="rateInput" placeholder="e.g. 110.50">
         </div>
 
-        <div class="form-actions">
-            <button id="submitCurrency">✅ Submit</button>
-            <button type="button" id="cancelCurrency">❌ Cancel</button>
+        <div class="form-actions" style="margin-top: 15px;">
+            <button id="submitCurrency" style="background: #28a745; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">✅ Save Currency</button>
+            <button type="button" id="cancelCurrency" style="background: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">❌ Cancel</button>
         </div>
     </section>
 
-    <!-- TABLE -->
     <section class="table-section">
-        <table class="currency-table">
+        <table class="currency-table" style="width:100%; border-collapse: collapse;">
             <thead>
-                <tr>
-                    <th>Flag</th>
-                    <th>Country</th>
-                    <th>Currency</th>
-                    <th>Rate (USD)</th>
-                    <th colspan="2">Actions</th>
+                <tr style="background: #f8f9fa; border-bottom: 2px solid #dee2e6;">
+                    <th style="padding:12px; text-align:left;">Flag</th>
+                    <th style="padding:12px; text-align:left;">Country</th>
+                    <th style="padding:12px; text-align:left;">Currency</th>
+                    <th style="padding:12px; text-align:left;">Rate (USD)</th>
+                    <th style="padding:12px; text-align:left;">Actions</th>
                 </tr>
             </thead>
-
-            <tbody id="currencyTableBody">
-                <!-- Dynamic rows -->
-            </tbody>
+            <tbody id="currencyTableBody"></tbody>
         </table>
     </section>
-
-
-
 </div>
