@@ -58,6 +58,7 @@ function initLogin() {
         if (res.token) {
             // 🔐 token save
             localStorage.setItem("token", res.token);
+            localStorage.setItem("uid", res.user.id)
             window.location.hash = "dashboard";
             render()
         } else {

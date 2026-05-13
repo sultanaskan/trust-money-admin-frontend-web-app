@@ -14,12 +14,116 @@
     </div>
 
 
+
+
+    <h1>Banking Admin Notifications</h1>
+    <button id="enable-btns">Enable Notifications</button>
+
+
+
+
     <script src="/assets/js/config.js"></script> <!-- routes, BASE_URL -->
     <script src="/assets/js/auth.js"></script>
     <script src="/assets/js/api.js"></script> <!-- API functions -->
     <script src="/assets/js/validate.js"></script> <!-- validation -->
     <script src="/assets/js/init.js"></script> <!-- event/init -->
     <script src="/assets/js/app.js"></script> <!-- render/router (entry) -->
+
+    <!-- Load Firebase SDKs from CDN -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+        import { getMessaging, getToken, onMessage } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-messaging.js";
+
+        // ... your existing initialization code ...
+
+
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDhaJBjG7N-QjH4U0GSCrV5LLCm04aR2us",
+            authDomain: "studio-4167150876-dea3d.firebaseapp.com",
+            projectId: "studio-4167150876-dea3d",
+            storageBucket: "studio-4167150876-dea3d.firebasestorage.app",
+            messagingSenderId: "723238955217",
+            appId: "1:723238955217:web:7c68ac4c10836679b37df0"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const messaging = getMessaging(app);
+
+        const btn = document.getElementById('enable-btns');
+
+        btn.addEventListener('click', () => {
+            // Request Permission
+            Notification.requestPermission().then((permission) => {
+                if (permission === 'granted') {
+                    console.log('Notification permission granted.');
+                    // index.html - Inside your <script type="module">
+                    if ('serviceWorker' in navigator) {
+                        navigator.serviceWorker.register('/firebase-messaging-sw.js')
+                            .then((registration) => {
+                                console.log('Service Worker registered with scope:', registration.scope);
+                            })
+                            .catch((err) => {
+                                console.error('Service Worker registration failed:', err);
+                            });
+                    }
+
+
+                    // Get Token
+                    getToken(messaging, { vapidKey: 'BLZW8fZHxWAI8m1GYj9_CNFhRaRd6LTdXyznwrD3IUmMxUKXqF68rxt9NJUsgZIab_LUkpFraKCxMiqYxQaiIb4' })
+                        .then((currentToken) => {
+                            if (currentToken) {
+                                console.log("Token generated:", currentToken);
+                                // SEND THIS TOKEN TO YOUR NODE.JS SERVER API
+                                saveFcmTokenToServer(currentToken);
+                            } else {
+                                console.log('No registration token available.');
+                            }
+                        }).catch((err) => {
+                            console.log('An error occurred while retrieving token. ', err);
+                        });
+                }
+            });
+        });
+
+        // --- Function to call your Node.js API ---
+        async function saveFcmTokenToServer(token) {
+            try {
+                const response = await fetch(`${BASE_URL}/notification/save-token`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        // If you use JWT, add the line below:
+                        // 'Authorization': `Bearer ${your_stored_token}` 
+                    },
+                    body: JSON.stringify({
+                        userId: localStorage.getItem("uid"),       // CRITICAL: Ensure this ID exists in your Users table!
+                        token: token,
+                        platform: 'web'  // Tells the server this is from the admin panel
+                    })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    console.log('FCM Token synced with server:', data.message);
+                } else {
+                    console.error('Server refused token:', data.message);
+                }
+            } catch (error) {
+                console.error('Network error while saving token:', error);
+            }
+        }
+
+        // Add this to handle messages when the app is in the foreground
+        onMessage(messaging, (payload) => {
+            console.log('Message received in foreground: ', payload);
+            alert(`${payload.notification.title}: ${payload.notification.body}`);
+            // Or use a library like Toastr or SweetAlert to show a nice popup
+        });
+
+    </script>
 </body>
 
 

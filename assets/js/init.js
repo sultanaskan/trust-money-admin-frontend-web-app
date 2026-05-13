@@ -48,6 +48,7 @@ function initAuthTabs(onChange) {
 
 function logout() {
     localStorage.removeItem("token");
+    localStorage.removeItem("uid");
     location.hash = "login";
     render()
 }
